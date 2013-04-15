@@ -85,7 +85,10 @@ class OmniGraffleSchema(object):
 class OmniGraffle(object):
 
     def __init__(self):
-        self.og = app('OmniGraffle 5.app')
+        try:
+            self.og = app('OmniGraffle 5.app')
+        except:
+            self.og = app('OmniGraffle Professional 5.app')
 
     def active_document(self):
         self.og.activate()
